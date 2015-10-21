@@ -1,8 +1,9 @@
 ## R script for caching inverse matrix 
 
 ## makeCacheMatrix has list of 4 functions. 
-# set of matrix makes inverse to NULL
-#
+## Given: Matrix is always invertible. A %*% INV(A) gives Identical matrix 
+## Initial set of matrix makes, inverse property to NULL
+
 
 makeCacheMatrix <- function(x = matrix()) {
   inverse <- NULL
@@ -20,7 +21,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve uses list to see if inverse already exist (not NULL)
+## cacheSolve uses list to see if inverse already exist of matrix (not NULL)
+## if inverse is computed before, we simply return inverse matrix without recomputing 
+## if not, inverse is calculated and stored for future use
 
 
 cacheSolve <- function(x, ...) {
